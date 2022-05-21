@@ -1,0 +1,43 @@
+<p>idea-create not works!</p>
+<button mat-button color="primary">Basic</button>
+<button mat-raised-button color="warn">Warn</button>
+
+<mat-slider 
+  [min]="0" 
+  [max]="100" 
+  [step]="25" 
+  [value]="10">
+</mat-slider>
+
+<form class="form">
+  <mat-form-field class="form-field" appearance="fill" >
+    <mat-label>Idea name</mat-label>
+    <input 
+      type="text"
+      placeholder="Enter the name"
+      aria-label="Idea name"
+      matInput
+    >
+  </mat-form-field>
+
+  <mat-form-field class="form-field" appearance="fill" >
+    <mat-label>Idea content</mat-label>
+    <textarea
+      placeholder="Enter the content"
+      aria-label="Idea content"
+      rows="7"
+      matInput
+    >
+    </textarea>
+  </mat-form-field>
+
+  <mat-form-field class="form-field" appearance="fill" >
+    <mat-label>Choose an option</mat-label>
+    <mat-select>
+      <mat-option value="option1">Option 1</mat-option>
+      <mat-option value="option3">Option 3</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
+

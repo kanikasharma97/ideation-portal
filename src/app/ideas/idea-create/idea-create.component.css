@@ -1,0 +1,12 @@
+.form {
+  margin: auto;
+  width: 1000px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.textarea {
+  resize: none;
+}
