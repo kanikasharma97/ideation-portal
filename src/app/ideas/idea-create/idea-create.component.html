@@ -1,43 +1,99 @@
-<p>idea-create not works!</p>
-<button mat-button color="primary">Basic</button>
-<button mat-raised-button color="warn">Warn</button>
-
-<mat-slider 
-  [min]="0" 
-  [max]="100" 
-  [step]="25" 
-  [value]="10">
-</mat-slider>
-
-<form class="form">
-  <mat-form-field class="form-field" appearance="fill" >
-    <mat-label>Idea name</mat-label>
+<form 
+  class="form"
+  [formGroup]="ideaForm"
+>
+  <h1 style="text-align: center">
+    Create Idea
+  </h1>
+  <mat-form-field 
+    class="form-field" 
+    appearance="fill"
+  >
+    <mat-label>Idea title</mat-label>
     <input 
       type="text"
-      placeholder="Enter the name"
-      aria-label="Idea name"
+      placeholder="Enter the title"
+      aria-label="Idea title"
       matInput
+      formControlName="title"
     >
   </mat-form-field>
 
-  <mat-form-field class="form-field" appearance="fill" >
+  <mat-form-field 
+    class="form-field"
+    appearance="fill"
+  >
     <mat-label>Idea content</mat-label>
     <textarea
       placeholder="Enter the content"
       aria-label="Idea content"
       rows="7"
       matInput
+      formControlName="content"
     >
     </textarea>
   </mat-form-field>
 
-  <mat-form-field class="form-field" appearance="fill" >
-    <mat-label>Choose an option</mat-label>
-    <mat-select>
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
-    </mat-select>
+  <mat-form-field 
+    class="form-field" 
+    appearance="fill" 
+  >
+    <mat-label>Choose topics</mat-label>
+    <mat-chip-list 
+      #chipList 
+      aria-label="Topic selection"
+    >
+      <mat-chip
+        *ngFor="let topic of topics"
+        (removed)="removeTopic(topic)"
+      >
+        {{topic.value}}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+    </mat-chip-list>
+    <input type="text"
+      placeholder="Pick topics"
+      aria-label="Pick Topics"
+      matInput
+      formControlName="search"  
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+    >
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      (optionSelected)="selectTopic($event)"
+    >  
+      <ng-template [ngIf]="filteredTopics.length === 1 && filteredTopics[0].id === ''">
+        <div class="spinner">
+          <mat-spinner
+            type="indeterminate"
+            diameter="70"
+          >
+          </mat-spinner>
+        </div>
+      </ng-template>
+      <mat-option 
+        *ngFor="let option of filteredTopics" 
+        [value]="option.id"
+      >
+        {{option.value}}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
+  <div 
+    class="footer"
+  >
+    <button 
+      mat-raised-button 
+      color="primary" 
+      class="btn-submit"
+      (click)="submitForm()"
+    >
+      Create
+    </button>
+  </div>
 </form>
 
 

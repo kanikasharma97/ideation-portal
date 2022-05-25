@@ -1,6 +1,9 @@
 .form {
-  margin: auto;
-  width: 1000px;
+  margin: 30px auto;
+  width: 600px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 4px;
 }
 
 .form-field {
@@ -9,4 +12,20 @@
 
 .textarea {
   resize: none;
+}
+
+.btn-submit {
+  width: 150px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
