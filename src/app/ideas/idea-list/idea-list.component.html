@@ -1,1 +1,3 @@
-<p>idea-list works!</p>
+<div *ngFor="let idea of ideas">
+  <app-idea-item [idea]="idea"></app-idea-item>
+</div>

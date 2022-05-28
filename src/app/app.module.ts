@@ -10,6 +10,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete'
 import {MatChipsModule} from '@angular/material/chips'
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card'
  
 import { AppComponent } from './app.component';
 import { IdeaListComponent } from './ideas/idea-list/idea-list.component';
@@ -40,6 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatAutocompleteModule,
     MatChipsModule,
     MatIconModule,
+    MatCardModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     HttpClientModule

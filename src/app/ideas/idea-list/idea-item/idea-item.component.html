@@ -1,1 +1,26 @@
-<p>idea-item works!</p>
+<mat-card class="example-card" style="margin: 30px auto;">
+  <mat-card-header>
+    <img 
+      mat-card-avatar 
+      [src]="idea.createrInfo.picture.thumbnail"
+    />
+    <mat-card-title>{{idea.title}}</mat-card-title>
+    <mat-card-subtitle>10 days ago</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{idea.content}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="footer">
+    <button mat-button aria-label="Upvote">
+      <mat-icon>thumb_up</mat-icon>
+    </button>
+    <button mat-button aria-label="Downvote">
+      <mat-icon>thumb_down</mat-icon>
+    </button>
+    <a mat-button href="/idea-details" aria-label="Downvote">
+      <mat-icon>comment</mat-icon>
+    </a>
+  </mat-card-actions>
+</mat-card>

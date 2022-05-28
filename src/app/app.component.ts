@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ideation-portal'
+  path = window.location.pathname
+
+  routes = {
+    IDEA_CREATE: '/idea-create',
+    IDEA_LIST: '/idea-list',
+    IDEA_DETAILS: '/idea-details'
+  }
 }

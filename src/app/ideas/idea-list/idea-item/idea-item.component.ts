@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import Idea from "../../idea.model"
 
 @Component({
   selector: 'app-idea-item',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdeaItemComponent implements OnInit {
 
+  @Input() idea: Idea = new Idea('', '', { picture: {thumbnail: ''} }, [])
   constructor() { }
 
   ngOnInit(): void {
