@@ -11,6 +11,8 @@ import {MatChipsModule} from '@angular/material/chips'
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
  
 import { AppComponent } from './app.component';
 import { IdeaListComponent } from './ideas/idea-list/idea-list.component';
@@ -44,7 +46,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

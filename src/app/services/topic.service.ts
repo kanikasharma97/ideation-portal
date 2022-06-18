@@ -18,7 +18,7 @@ export class TopicService {
     return this.http.get(`${this.url}?q=${searchStr}`).pipe(
       retry(3), // retry 3 times
       map(
-        (val: any) => val.map(({id, value}: Topic) => new Topic(id, value))
+        (val: any) => val.map(({id, name}: any) => new Topic(id, name))
       ),
       catchError(
         () => {

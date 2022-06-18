@@ -21,7 +21,7 @@ export class IdeaService {
     return this.http.get(`${this.url}`).pipe(
       retry(3),
       map(
-        (val: any) => val.map(({title, content, createrInfo}: Idea) => new Idea(title, content, createrInfo, []))
+        (val: any) => val.map(({name, content, createrInfo}: any) => new Idea(name, content, createrInfo, []))
       ),
       catchError(() => {
         console.log("called")

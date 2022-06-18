@@ -4,7 +4,9 @@ import {differenceBy} from 'lodash'
 import { of, switchMap , debounceTime} from 'rxjs';
 import { IdeaService } from 'src/app/services/idea.service';
 import { TopicService } from 'src/app/services/topic.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import Topic from "../../topic.model"
+
 
 @Component({
   selector: 'app-idea-create',
@@ -22,7 +24,7 @@ export class IdeaCreateComponent implements OnInit {
   filteredTopics: any = [];
   isTopicLoading: boolean = false;
 
-  constructor(private fb: FormBuilder, private topicService: TopicService, private ideaService: IdeaService) {}
+  constructor(private fb: FormBuilder, private topicService: TopicService, private ideaService: IdeaService, private _snackBar:MatSnackBar) {}
 
   ngOnInit() {
     this.ideaForm.controls['search'].valueChanges.pipe(
@@ -52,6 +54,7 @@ export class IdeaCreateComponent implements OnInit {
     this.topics = this.topics.filter((topic) => topic.id !== removedTopic.id)
   }
 
+
   submitForm() {
     if (this.ideaForm.valid) {
       const {
@@ -61,12 +64,14 @@ export class IdeaCreateComponent implements OnInit {
       
       const payload = {
         content,
-        title,
+        name: title,
         topics: this.topics.map((topic) => topic.id)
       }
   
       this.ideaService.createIdea(payload).subscribe(() => {
-        console.log('saved...')
+        this._snackBar.open("Idea has been created", "close",{
+          duration:3000
+        });
       })
     }
   }
