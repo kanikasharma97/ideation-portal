@@ -1,15 +1,2 @@
-
-<div [ngSwitch]="path">
-  <app-idea-create 
-    *ngSwitchCase="routes.IDEA_CREATE"
-    >
-  </app-idea-create>
-  <app-idea-list
-    *ngSwitchCase="routes.IDEA_LIST"
-   >
-  </app-idea-list>
-  <app-idea-detail
-    *ngSwitchCase="routes.IDEA_DETAILS"
-  >
-  </app-idea-detail>
-</div>
+<app-header></app-header>
+<router-outlet></router-outlet>
