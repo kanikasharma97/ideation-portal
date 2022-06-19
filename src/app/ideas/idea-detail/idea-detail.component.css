@@ -1,0 +1,14 @@
+
+.form {
+    margin: auto;
+    width: 50%;
+}
+
+.form > .form-field {
+    width: 100%;
+}
+
+.comment-list {
+    margin: auto;
+    width: 50%;
+}

@@ -16,8 +16,9 @@
     <button mat-button aria-label="Downvote">
       <mat-icon>thumb_down</mat-icon>
     </button>
-    <a mat-button href="/idea-details" aria-label="Comment">
+    <a mat-button href="#" (click)="toggleCommentSection()" aria-label="Downvote">
       <mat-icon>comment</mat-icon>
     </a>
   </mat-card-actions>
 </mat-card>
+<app-idea-detail *ngIf="showCommentSection"></app-idea-detail>

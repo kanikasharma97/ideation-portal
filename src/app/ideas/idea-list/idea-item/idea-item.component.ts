@@ -8,10 +8,16 @@ import Idea from "../../idea.model"
 })
 export class IdeaItemComponent implements OnInit {
 
+  showCommentSection: boolean = false
+
   @Input() idea: Idea = new Idea('', '', '')
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleCommentSection() {
+    this.showCommentSection = !this.showCommentSection
   }
 
 }

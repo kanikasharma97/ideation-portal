@@ -1,1 +1,14 @@
-<p>idea-detail works!</p>
+<form class="form">
+  <mat-form-field
+    class='form-field'
+    appearance="fill"
+  >
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It will be better..."></textarea>
+  </mat-form-field>
+</form>
+
+<div class="comment-list" *ngFor="let comment of comments">
+  <app-comment [comment]="comment"></app-comment>
+</div>
+

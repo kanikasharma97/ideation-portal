@@ -22,8 +22,7 @@ import { IdeaListComponent } from './ideas/idea-list/idea-list.component';
 import { IdeaCreateComponent } from './ideas/idea-create/idea-create.component';
 import { IdeaItemComponent } from './ideas/idea-list/idea-item/idea-item.component';
 import { IdeaDetailComponent } from './ideas/idea-detail/idea-detail.component';
-import { CommentListComponent } from './ideas/idea-detail/comment-list/comment-list.component';
-import { CommentComponent } from './ideas/idea-detail/comment-list/comment/comment.component';
+import { CommentComponent } from './ideas/idea-detail/comment/comment.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -49,7 +48,6 @@ const appRoutes: Routes = [
     IdeaCreateComponent,
     IdeaItemComponent,
     IdeaDetailComponent,
-    CommentListComponent,
     CommentComponent,
     HeaderComponent,
     FooterComponent,
