@@ -26,6 +26,7 @@ import { CommentComponent } from './ideas/idea-detail/comment-list/comment/comme
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { DateagoPipe } from './dateago.pipe';
 
 
 const appRoutes: Routes = [
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     CommentListComponent,
     CommentComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DateagoPipe,
   ],
   imports: [
     BrowserModule,
