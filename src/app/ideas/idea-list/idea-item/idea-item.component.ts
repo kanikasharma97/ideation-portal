@@ -8,7 +8,7 @@ import Idea from "../../idea.model"
 })
 export class IdeaItemComponent implements OnInit {
 
-  @Input() idea: Idea = new Idea('', '', { picture: {thumbnail: ''} }, [])
+  @Input() idea: Idea = new Idea('', '', '')
   constructor() { }
 
   ngOnInit(): void {
