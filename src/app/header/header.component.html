@@ -1,21 +1,12 @@
 <mat-toolbar class="header">
-    <span>
-      Ideation Portal
-    </span>
-    <nav
-      class="nav"
-      aria-label="Navigation Bar">
-        <a
-          routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}"
-        >
-          Home
-        </a>
-        <a
-          routerLink="/idea-create"
-          routerLinkActive="active">
-          Idea
-        </a>
-    </nav>
+  <span>
+    <a routerLink="/">
+    <img class="logo" src="/assets/idea-icon.png" width="40" height="40" >
+    </a>
+  </span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="white" routerLink="/idea-create">Create idea</button>
+  <button mat-icon-button class="example-icon" aria-label="icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
 </mat-toolbar>
