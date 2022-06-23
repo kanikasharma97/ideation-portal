@@ -1,16 +1,16 @@
-<form 
+<form
   class="form"
   [formGroup]="ideaForm"
 >
   <h1 style="text-align: center">
     Create Idea
   </h1>
-  <mat-form-field 
-    class="form-field" 
+  <mat-form-field
+    class="form-field"
     appearance="fill"
   >
     <mat-label>Idea title</mat-label>
-    <input 
+    <input
       type="text"
       placeholder="Enter the title"
       aria-label="Idea title"
@@ -19,7 +19,7 @@
     >
   </mat-form-field>
 
-  <mat-form-field 
+  <mat-form-field
     class="form-field"
     appearance="fill"
   >
@@ -34,13 +34,13 @@
     </textarea>
   </mat-form-field>
 
-  <mat-form-field 
-    class="example-field" 
-    appearance="fill" 
+  <mat-form-field
+    class="topic-field"
+    appearance="fill"
   >
     <mat-label>Choose topics to publish in</mat-label>
-    <mat-chip-list 
-      #chipList 
+    <mat-chip-list
+      #chipList
       aria-label="Topic selection"
     >
       <mat-chip
@@ -56,14 +56,14 @@
     <input type="text"
       aria-label="Pick Topics"
       matInput
-      formControlName="search"  
+      formControlName="search"
       [matAutocomplete]="auto"
       [matChipInputFor]="chipList"
     >
     <mat-autocomplete
       #auto="matAutocomplete"
       (optionSelected)="selectTopic($event)"
-    >  
+    >
       <ng-template [ngIf]="filteredTopics.length === 1 && filteredTopics[0].id === ''">
         <div class="spinner">
           <mat-spinner
@@ -73,23 +73,29 @@
           </mat-spinner>
         </div>
       </ng-template>
-      <mat-option 
-        *ngFor="let option of filteredTopics" 
+      <mat-option
+        *ngFor="let option of filteredTopics"
         [value]="option.id"
       >
         {{option.value}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  <button class="example-mini" mat-mini-fab color="primary" aria-label="button with a add icon" (click)="openDialog()"> 
+  <button
+    class="add-topic"
+     mat-mini-fab
+     color="primary"
+     aria-label="add topic"
+     (click)="openDialog()"
+  >
     <mat-icon>add</mat-icon>
   </button>
-  <div 
+  <div
     class="footer"
   >
-    <button 
-      mat-raised-button 
-      color="primary" 
+    <button
+      mat-raised-button
+      color="primary"
       class="btn-submit"
       (click)="submitForm()"
     >

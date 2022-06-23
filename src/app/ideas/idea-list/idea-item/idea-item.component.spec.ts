@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DateagoPipe } from 'src/app/dateago.pipe';
 
 import { IdeaItemComponent } from './idea-item.component';
 
@@ -8,7 +9,7 @@ describe('IdeaItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IdeaItemComponent ]
+      declarations: [ IdeaItemComponent, DateagoPipe ]
     })
     .compileComponents();
   });

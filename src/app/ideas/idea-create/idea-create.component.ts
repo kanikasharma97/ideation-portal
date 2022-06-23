@@ -21,7 +21,7 @@ export class IdeaCreateComponent implements OnInit {
     content: ['', Validators.required],
     search: ['']
   })
-  
+
   topics: Topic[] = []
   filteredTopics: any = [];
   isTopicLoading: boolean = false;
@@ -31,7 +31,7 @@ export class IdeaCreateComponent implements OnInit {
 
   ngOnInit() {
     this.ideaForm.controls['search'].valueChanges.pipe(
-      debounceTime(500), 
+      debounceTime(500),
       switchMap((searchVal) => {
         if (searchVal) {
           this.filteredTopics = [{id: '', value: ''}];
@@ -42,8 +42,8 @@ export class IdeaCreateComponent implements OnInit {
       })
     ).subscribe((topics: any) => {
       this.filteredTopics = differenceBy(
-                              topics, 
-                              this.topics, 
+                              topics,
+                              this.topics,
                               'id'
                             )
     })
@@ -64,13 +64,13 @@ export class IdeaCreateComponent implements OnInit {
         content,
         title,
       } = this.ideaForm.value
-      
+
       const payload = {
         content,
         name: title,
         topics: this.topics.map((topic) => topic.id)
       }
-  
+
       this.ideaService.createIdea(payload).subscribe(() => {
         this._snackBar.open("Idea has been created", "close",{
           duration:3000

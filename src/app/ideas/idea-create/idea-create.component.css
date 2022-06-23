@@ -10,9 +10,8 @@
   width: 100%;
 }
 
-.example-field {
+.topic-field {
   width: 70% ;
-
 }
 
 .textarea {
@@ -36,7 +35,7 @@
   margin-top: 20px;
 }
 
-.example-mini {  
+.add-topic {
   margin-left: 20px;
   margin-bottom: 30px;
 }

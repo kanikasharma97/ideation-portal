@@ -13,7 +13,7 @@ export class TopicService {
 
   constructor(private http: HttpClient) { }
 
-  // to do create operator retry with exponential backoff 
+  // to do create operator retry with exponential backoff
   getTopics(searchStr: string) {
     return this.http.get(`${this.url}?q=${searchStr}`).pipe(
       retry(3), // retry 3 times
