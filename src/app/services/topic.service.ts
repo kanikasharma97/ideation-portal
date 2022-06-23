@@ -28,4 +28,8 @@ export class TopicService {
     )
   }
 
+  createTopic(params: any) {
+    return this.http.post(this.url, params)
+  }
+
 }

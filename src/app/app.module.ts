@@ -14,6 +14,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatDialogModule } from '@angular/material/dialog';
 
 
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DateagoPipe } from './dateago.pipe';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 const appRoutes: Routes = [
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     DateagoPipe,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatSnackBarModule,
     MatToolbarModule,
+    MatDialogModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

@@ -5,7 +5,9 @@ import { of, switchMap , debounceTime} from 'rxjs';
 import { IdeaService } from 'src/app/services/idea.service';
 import { TopicService } from 'src/app/services/topic.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import Topic from "../../topic.model"
+import Topic from "../../topic.model";
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/dialog/dialog.component';
 
 
 @Component({
@@ -24,7 +26,8 @@ export class IdeaCreateComponent implements OnInit {
   filteredTopics: any = [];
   isTopicLoading: boolean = false;
 
-  constructor(private fb: FormBuilder, private topicService: TopicService, private ideaService: IdeaService, private _snackBar:MatSnackBar) {}
+
+  constructor(private fb: FormBuilder, private topicService: TopicService, private ideaService: IdeaService, private _snackBar:MatSnackBar, private dialogService: MatDialog) {}
 
   ngOnInit() {
     this.ideaForm.controls['search'].valueChanges.pipe(
@@ -74,5 +77,12 @@ export class IdeaCreateComponent implements OnInit {
         });
       })
     }
+  }
+
+  openDialog(){
+    const dialogRef = this.dialogService.open(DialogComponent, {
+      width: '250px',
+     // data: {name: this.name, animal: this.animal},
+    });
   }
 }

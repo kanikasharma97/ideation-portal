@@ -1,0 +1,15 @@
+<form 
+  class="form"
+  [formGroup]="addTopicForm"
+>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Add a topic</mat-label>
+    <input matInput formControlName="topicName">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+  <button class="example-close" mat-button  (click)="onNoClick()">Close</button>
+  <button class="example-add" mat-button cdkFocusInitial (click)="addNewTopic()">Add</button>
+</div>
+</form>

@@ -10,12 +10,18 @@
   width: 100%;
 }
 
+.example-field {
+  width: 70% ;
+
+}
+
 .textarea {
   resize: none;
 }
 
 .btn-submit {
   width: 150px;
+
 }
 
 .footer {
@@ -28,4 +34,9 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.example-mini {  
+  margin-left: 20px;
+  margin-bottom: 30px;
 }
