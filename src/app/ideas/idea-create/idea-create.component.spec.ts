@@ -15,6 +15,7 @@ import Idea from '../idea.model';
 
 import { IdeaCreateComponent } from './idea-create.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 // mocks
@@ -65,7 +66,8 @@ describe('IdeaCreateComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         MatChipsModule,
-        MatIconModule
+        MatIconModule,
+        MatDialogModule
       ]
     })
   });

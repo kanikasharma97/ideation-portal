@@ -15,7 +15,7 @@ import {MatCardModule} from '@angular/material/card'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatDialogModule } from '@angular/material/dialog';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { AppComponent } from './app.component';
 import { IdeaListComponent } from './ideas/idea-list/idea-list.component';
@@ -72,7 +72,8 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     MatToolbarModule,
     MatDialogModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
