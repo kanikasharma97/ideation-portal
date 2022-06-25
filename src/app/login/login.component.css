@@ -1,0 +1,15 @@
+.form {
+    margin: 250px auto;
+    width: 500px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 4px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-field {
+  width: 100%;
+}

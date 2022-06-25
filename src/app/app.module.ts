@@ -28,11 +28,16 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DateagoPipe } from './dateago.pipe';
 import { DialogComponent } from './dialog/dialog.component';
+import { LoginComponent } from './login/login.component';
 
 
 const appRoutes: Routes = [
   {
     path: '',
+    component: LoginComponent
+  },
+  {
+    path: 'idea-list',
     component: IdeaListComponent
   },
   {
@@ -52,7 +57,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     DateagoPipe,
-    DialogComponent
+    DialogComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -76,4 +82,4 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

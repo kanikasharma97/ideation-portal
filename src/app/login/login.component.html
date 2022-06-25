@@ -1,0 +1,38 @@
+<form class="form" [formGroup]="loginForm">
+    <h1 style="text-align: center">
+      Login
+    </h1>
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>
+        Username
+      </mat-label>
+      <input
+        matInput
+        formControlName="username"
+      >
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>
+        Password
+      </mat-label>
+      <input
+        matInput
+        formControlName="password"
+      >
+    </mat-form-field>
+    <div
+        style="display: flex; justify-content: space-around;">
+        <button
+          mat-raised-button
+          color="primary"
+          class="btn-submit"
+          style="width: 250px;"
+          (click)="login()"
+        >
+          Login
+        </button>
+    </div>
+
+</form>
+
+
